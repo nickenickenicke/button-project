@@ -1,8 +1,12 @@
 <script lang="ts">
+	let isFlipped = $state(false);
+	const onclick = () => {
+		isFlipped = !isFlipped;
+	};
 </script>
 
 <div class="buttons-wrapper">
-	<article class="button-frame">
+	<article class="button-frame" style={`${isFlipped ? '--current-rotation: y 180deg;' : ''}`}>
 		<div class="button-frame-inner">
 			<div class="button-frame-front">
 				<span class="button-frame-number">500</span>
@@ -10,10 +14,11 @@
 				<div class="button-frame-text">
 					<p>A blurb about the button :)</p>
 				</div>
-				<button class="button-frame-flip hover:cursor-cell">Flippa the table</button>
+				<button {onclick} class="button-frame-flip hover:cursor-cell">Flippa the table</button>
 			</div>
 			<div class="button-frame-back">
 				<div class="button-backside">bloop</div>
+				<button {onclick} class="button-frame-flip hover:cursor-cell">Flippa the table</button>
 			</div>
 		</div>
 	</article>
@@ -25,8 +30,8 @@
 		display: grid;
 		min-height: 500px;
 		width: 400px;
-		grid-template-rows: [frame-area-start button-area-start number-area-start] 60px [number-area-end] 340px [button-area-end text-area-start] auto [text-area-end flip-area-start] 60px [flip-area-end frame-area-end];
-		grid-template-columns: [frame-area-start button-area-start text-area-start flip-area-start] 1fr [number-area-start] auto [frame-area-end button-area-end number-area-end text-area-end flip-area-end];
+		grid-template-rows: [frame-area-start button-area-start number-area-start back-area-start] 60px [number-area-end] 340px [button-area-end text-area-start] auto [text-area-end back-area-end flip-area-start] 60px [flip-area-end frame-area-end];
+		grid-template-columns: [frame-area-start button-area-start text-area-start back-area-start flip-area-start] 1fr [number-area-start] auto [frame-area-end button-area-end number-area-end text-area-end back-area-end flip-area-end];
 	}
 	.button-frame-inner,
 	.button-frame-front,
@@ -38,7 +43,7 @@
 	}
 	.button-frame-inner {
 		position: relative;
-		transition: transform 0.8s;
+		transition: rotate 0.8s;
 		transform-style: preserve-3d;
 		rotate: var(--current-rotation);
 	}
@@ -79,7 +84,7 @@
 		grid-area: flip-area;
 	}
 	.button-backside {
-		grid-area: frame-area;
+		grid-area: back-area;
 		background-color: #bc6161aa;
 		transform: rotateY(180deg);
 	}
