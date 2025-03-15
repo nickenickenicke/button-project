@@ -5,7 +5,7 @@
 	};
 </script>
 
-<div class="buttons-wrapper">
+<div class="flex flex-wrap gap-10">
 	<article class="button-frame" style={`${isFlipped ? '--current-rotation: y 180deg;' : ''}`}>
 		<div class="button-frame-inner">
 			<div class="button-frame-front">
@@ -86,6 +86,5 @@
 	.button-backside {
 		grid-area: back-area;
 		background-color: #bc6161aa;
-		transform: rotateY(180deg);
 	}
 </style>
