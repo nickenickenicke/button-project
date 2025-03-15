@@ -5,24 +5,22 @@
 	};
 </script>
 
-<div class="flex flex-wrap gap-10">
-	<article class="button-frame" style={`${isFlipped ? '--current-rotation: y 180deg;' : ''}`}>
-		<div class="button-frame-inner">
-			<div class="button-frame-front">
-				<span class="button-frame-number">500</span>
-				<div class="button-frame-button"></div>
-				<div class="button-frame-text">
-					<p>A blurb about the button :)</p>
-				</div>
-				<button {onclick} class="button-frame-flip hover:cursor-cell">Flippa the table</button>
+<article class="button-frame" style={`${isFlipped ? '--current-rotation: y 180deg;' : ''}`}>
+	<div class="button-frame-inner">
+		<div class="button-frame-front">
+			<span class="button-frame-number">500</span>
+			<div class="button-frame-button"></div>
+			<div class="button-frame-text">
+				<p>A blurb about the button :)</p>
 			</div>
-			<div class="button-frame-back">
-				<div class="button-backside">bloop</div>
-				<button {onclick} class="button-frame-flip hover:cursor-cell">Flippa the table</button>
-			</div>
+			<button {onclick} class="button-frame-flip hover:cursor-cell">Flippa the table</button>
 		</div>
-	</article>
-</div>
+		<div class="button-frame-back">
+			<div class="button-backside">bloop</div>
+			<button {onclick} class="button-frame-flip hover:cursor-cell">Flippa the table</button>
+		</div>
+	</div>
+</article>
 
 <style scoped>
 	.button-frame {

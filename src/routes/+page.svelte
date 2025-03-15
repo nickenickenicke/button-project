@@ -1,7 +1,7 @@
 <script>
-	import ButtonTemplate from '../components/ButtonTemplate.svelte';
+	import ButtonCards from '../components/ButtonCards.svelte';
 </script>
 
 <main class="flex min-h-screen items-center justify-center">
-	<ButtonTemplate />
+	<ButtonCards />
 </main>
